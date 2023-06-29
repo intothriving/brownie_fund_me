@@ -3,6 +3,7 @@ from scripts.helpful_scripts import get_account
 
 
 def fund():
+    print("getting contract")
     fund_me = FundMe[-1]
     account = get_account()
     entrance_fee = fund_me.getEntranceFee()

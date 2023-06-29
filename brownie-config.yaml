@@ -8,6 +8,7 @@ compiler:
       - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
 dotenv: .env
 networks:
+  default: mainnet-fork-dev
   goerli:
     eth_usd_price_feed: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e"
     verify: True
@@ -15,9 +16,11 @@ networks:
     eth_usd_price_feed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
     explorer: https://eth-mainnet.g.alchemy.com/v2/vLG35Gvw7a8SSwDeqhT6P-rgF5yQjdmF
     verify: False
-  development:
-    verify: False
   ganache-local:
+    host: 127.0.0.1
+    ganache-gui: ganache-gui      # Specify the Ganache GUI command
+    port: 7545                     # Specify the correct port used by Ganache GUI
+    network_id: '*'                # Set the network ID to '*' to match any network ID
     verify: False
 wallets:
   from_key: ${PRIVATE_KEY}
